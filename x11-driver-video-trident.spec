@@ -1,6 +1,6 @@
 Name: x11-driver-video-trident
 Version: 1.2.3
-Release: %mkrel 1
+Release: %mkrel 2
 Summary: The X.org driver for Trident Cards
 Group: System/X11
 URL: http://xorg.freedesktop.org
@@ -22,9 +22,7 @@ The X.org driver for Trident Cards
 %setup -q -n xf86-video-trident-%{version}
 
 %build
-%configure2_5x	--x-includes=%{_includedir}\
-		--x-libraries=%{_libdir}
-
+%configure
 %make
 
 %install
@@ -39,5 +37,4 @@ rm -rf %{buildroot}
 %{_libdir}/xorg/modules/drivers/trident_drv.la
 %{_libdir}/xorg/modules/drivers/trident_drv.so
 %{_mandir}/man4/trident.*
-
 
