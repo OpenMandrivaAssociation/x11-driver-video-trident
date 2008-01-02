@@ -29,18 +29,15 @@ Conflicts: xorg-x11-server < 7.0
 %description
 The X.org driver for Trident Cards
 
-%package devel
-Summary: Development files for %{name}
-Group: Development/X11
-License: MIT
-
-%description devel
-Development files for %{name}
-
 %prep
 %setup -q -n xf86-video-trident-%{version}
 
 %patch1 -p1
+%patch2 -p1
+%patch3 -p1
+%patch4 -p1
+%patch5 -p1
+%patch6 -p1
 
 %build
 autoreconf -ifs
@@ -50,11 +47,7 @@ autoreconf -ifs
 %install
 rm -rf %{buildroot}
 %makeinstall_std
-# Create list of dependencies
-x-check-deps.pl
-for deps in *.deps; do
-    install -D -m 644 $deps %{buildroot}/%{_datadir}/X11/mandriva/$deps
-done
+rm -f %{buildroot}/%{_libdir}/xorg/modules/drivers/*.la
 
 %clean
 rm -rf %{buildroot}
@@ -63,8 +56,3 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %{_libdir}/xorg/modules/drivers/trident_drv.so
 %{_mandir}/man4/trident.*
-
-%files devel
-%defattr(-,root,root)
-%{_libdir}/xorg/modules/drivers/*.la
-%{_datadir}/X11/mandriva/*.deps
