@@ -1,5 +1,5 @@
 Name: x11-driver-video-trident
-Version: 1.2.4
+Version: 1.3.0
 Release: %mkrel 1
 Summary: The X.org driver for Trident Cards
 Group: System/X11
