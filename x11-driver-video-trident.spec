@@ -21,7 +21,7 @@ x11-driver-video-trident is the X.org driver for Trident Cards.
 %setup -q -n xf86-video-trident-%{version}
 
 %build
-%configure
+%configure2_5x
 %make
 
 %install
