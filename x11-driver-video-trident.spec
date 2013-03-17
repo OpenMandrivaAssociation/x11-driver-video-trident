@@ -1,3 +1,5 @@
+%define _disable_ld_no_undefined 1
+
 Summary:	X.org driver for Trident Cards
 Name:		x11-driver-video-trident
 Version:	1.3.6
