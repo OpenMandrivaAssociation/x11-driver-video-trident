@@ -1,5 +1,5 @@
---- xf86-video-trident-1.3.6/src/trident_driver.c~	2012-07-16 02:16:00.000000000 +0000
-+++ xf86-video-trident-1.3.6/src/trident_driver.c	2013-03-17 06:01:14.317864324 +0000
+--- xf86-video-trident-1.3.6/src/trident_driver.c.0000~	2012-07-16 04:16:00.000000000 +0200
++++ xf86-video-trident-1.3.6/src/trident_driver.c	2013-04-06 02:36:30.068954305 +0200
 @@ -56,7 +56,6 @@
  
  #include "mipointer.h"
@@ -8,3 +8,11 @@
  #include "shadow.h"
  #include "trident.h"
  #include "trident_regs.h"
+@@ -3037,7 +3036,6 @@ TRIDENTScreenInit(SCREEN_INIT_ARGS_DECL)
+     	TridentAccelInit(pScreen);
+     }
+ 
+-    miInitializeBackingStore(pScreen);
+     xf86SetBackingStore(pScreen);
+ 
+     /* Initialise cursor functions */
