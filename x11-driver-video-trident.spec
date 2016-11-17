@@ -2,8 +2,8 @@
 
 Summary:	X.org driver for Trident Cards
 Name:		x11-driver-video-trident
-Version:	1.3.7
-Release:	4
+Version:	1.3.7.20161117
+Release:	1
 Group:		System/X11
 License:	MIT
 Url:		http://xorg.freedesktop.org
@@ -20,6 +20,7 @@ x11-driver-video-trident is the X.org driver for Trident Cards.
 %prep
 %setup -qn xf86-video-trident-%{version}
 %apply_patches
+[ -e autogen.sh ] && ./autogen.sh
 
 %build
 %configure
